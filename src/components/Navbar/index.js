@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { FaBars } from 'react-icons/fa'
-import { IconContext } from 'react-icons/lib'
-import { animateScroll as scroll } from 'react-scroll/modules'
+import React, { useEffect, useState } from 'react';
+import { FaBars } from 'react-icons/fa';
+import { IconContext } from 'react-icons/lib';
+import { animateScroll as scroll } from 'react-scroll/modules';
 
 import {
   Nav,
@@ -13,26 +13,26 @@ import {
   NavLinks,
   NavBtn,
   NavBtnLink,
-} from './NavbarElements'
+} from './NavbarElements';
 
 const Navbar = ({ toggle }) => {
-  const [scrollNav, setScrollNav] = useState(false)
+  const [scrollNav, setScrollNav] = useState(false);
 
   const changeNav = () => {
     if (window.scrollY >= 80) {
-      setScrollNav(true)
+      setScrollNav(true);
     } else {
-      setScrollNav(false)
+      setScrollNav(false);
     }
-  }
+  };
 
   useEffect(() => {
-    window.addEventListener('scroll', changeNav)
-  }, [])
+    window.addEventListener('scroll', changeNav);
+  }, []);
 
   const toggleHome = () => {
-    scroll.scrollToTop()
-  }
+    scroll.scrollToTop();
+  };
 
   return (
     <>
@@ -40,7 +40,7 @@ const Navbar = ({ toggle }) => {
         <Nav scrollNav={scrollNav}>
           <NavbarContainer>
             <NavLogo to="/" onClick={toggleHome}>
-              Landing Page
+              Crypto Bank
             </NavLogo>
             <MobileIcon onClick={toggle}>
               <FaBars />
@@ -53,7 +53,7 @@ const Navbar = ({ toggle }) => {
                   duration={500}
                   spy={true}
                   exact="true"
-                  offset={-78}
+                  offset={-80}
                 >
                   About
                 </NavLinks>
@@ -65,7 +65,7 @@ const Navbar = ({ toggle }) => {
                   duration={500}
                   spy={true}
                   exact="true"
-                  offset={-78}
+                  offset={-80}
                 >
                   Discover
                 </NavLinks>
@@ -77,7 +77,7 @@ const Navbar = ({ toggle }) => {
                   duration={500}
                   spy={true}
                   exact="true"
-                  offset={-77}
+                  offset={-80}
                 >
                   Services
                 </NavLinks>
@@ -89,7 +89,7 @@ const Navbar = ({ toggle }) => {
                   duration={500}
                   spy={true}
                   exact="true"
-                  offset={-77}
+                  offset={-80}
                 >
                   Signup
                 </NavLinks>
@@ -102,7 +102,7 @@ const Navbar = ({ toggle }) => {
         </Nav>
       </IconContext.Provider>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
